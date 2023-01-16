@@ -24,6 +24,14 @@ app.use(function(req, res, next) {
 //Live check
 app.use('/live', express.Router().get('/', (req, res, next) => res.status(200).send()))
 
+app.get('/', (req, res) => {
+    res.send('Hello World! This is a GET')
+})
+
+app.post('/', (req, res) => {
+    res.send('Hello World! This is a POST')
+})
+
 //Routes
 app.use('/finance', require('./routes/finance.router'));
 
